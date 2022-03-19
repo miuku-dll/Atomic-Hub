@@ -1,5 +1,7 @@
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("Atomic")
+local NavalWarfare = win:Server("Naval-Warfare", "")
+
 local home = serv:Channel("Home")
 
 home:Button("Click for more info", function()
@@ -7,8 +9,6 @@ DiscordLib:Notification("Attention!", "Our Discord Server! | https://discord.gg/
 end)
 
 home:Seperator()
-
-local NavalWarfare = win:Server("Naval-Warfare", "")
 
 local Main1 = NavalWarfare:Channel("Teleports")
 
