@@ -1,0 +1,202 @@
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("Atomic")
+local serv = win:Server("Pet-Simulator-X", "")
+local btns = serv:Channel("Home")
+
+btns:Button("Click for more info", function()
+DiscordLib:Notification("Attention!", "Our Discord Server! | https://discord.gg/AD4JJSFYpj", "Okay!")
+end)
+
+btns:Seperator()
+
+local tgls = serv:Channel("Clicking")
+
+tgls:Toggle("Auto-Clicker",false, function(mama)
+		_G.AutoClicker = mama
+		while _G.AutoClicker do
+			game:GetService("ReplicatedStorage").Events.Click3:FireServer()
+			print("Clicked Once!")
+			wait(0.001)
+end
+end)
+
+tgls:Seperator()
+
+tgls:Button("Upgrade Click-Multiplier", function()
+local args = {
+    [1] = "ClickMultiplier"
+}
+
+game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+local sldrs = serv:Channel("Rebirth-Automation")
+
+sldrs:Label("Rebirths again as soon as you can afford it!")
+
+sldrs:Toggle("Rebirth-Once",false, function(mama1)
+	_G.Rebirth1 = mama1
+	while _G.Rebirth1 do
+	local args = {
+		[1] = 1
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-5k",false, function(mama2)
+	_G.Rebirth2 = mama2
+	while _G.Rebirth2 do
+	local args = {
+		[1] = 8
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-10k",false, function(mama3)
+	_G.Rebirth3 = mama3
+	while _G.Rebirth3 do
+	local args = {
+		[1] = 9
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-50k",false, function(mama4)
+	_G.Rebirth4 = mama4
+	while _G.Rebirth4 do
+	local args = {
+		[1] = 10
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-250k",false, function(mama5)
+	_G.Rebirth5 = mama5
+	while _G.Rebirth5 do
+	local args = {
+		[1] = 11
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-1M",false, function(mama6)
+	_G.Rebirth6 = mama6
+	while _G.Rebirth6 do
+	local args = {
+		[1] = 12
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-25M",false, function(mama6)
+	_G.Rebirth6 = mama6
+	while _G.Rebirth6 do
+	local args = {
+		[1] = 13
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-100M",false, function(mama7)
+	_G.Rebirth7 = mama7
+	while _G.Rebirth7 do
+	local args = {
+		[1] = 14
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-500M",false, function(mama8)
+	_G.Rebirth8 = mama8
+	while _G.Rebirth8 do
+	local args = {
+		[1] = 15
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+sldrs:Toggle("Rebirth-1B",false, function(mama9)
+	_G.Rebirth9 = mama9
+	while _G.Rebirth9 do
+	local args = {
+		[1] = 16
+	}
+	game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+	wait(0.3)
+end
+end)
+
+
+
+local drops = serv:Channel("Teleports")
+
+drops:Label("Click once to teleport!")
+
+drops:Button("Spawn", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(167.3, 4.25, 60.5)
+	DiscordLib:Notification("Success!", "Teleported to spawn!", "Okay!")
+end)
+
+drops:Button("Forest", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-386.9, 29.9, 174.8)
+	DiscordLib:Notification("Success!", "Teleported to forest!", "Okay!")
+end)
+
+drops:Button("Beach", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-517.28, 34.8, 458.3)
+	DiscordLib:Notification("Success!", "Teleported to beach!", "Okay!")
+end)
+
+drops:Button("Atlantis", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(40.45, 7.5, 675.80)
+	DiscordLib:Notification("Success!", "Teleported to atlantis!", "Okay!")
+end)
+
+drops:Button("Desert", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(468.55, 4.64, 703.30)
+	DiscordLib:Notification("Success!", "Teleported to desert!", "Okay!")
+end)
+
+drops:Button("Winter", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1035.05, -49.2, 165.00)
+	DiscordLib:Notification("Success!", "Teleported to winter!", "Okay!")
+end)
+
+drops:Button("Volcano", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1044.55, -38.8, 595.82)
+	DiscordLib:Notification("Success!", "Teleported to volcano!", "Okay!")
+end)
+
+local eggs = serv:Channel("Auto-Eggs")
+
+eggs:Toggle("10M",false, function(egg1)
+	_G.eggs1 = egg1
+	while _G.eggs1 do
+		local args = {
+			[1] = "10M",
+			[2] = "Triple"
+		}
+		game:GetService("ReplicatedStorage").Functions.Unbox:InvokeServer(unpack(args))
+		wait(2)
+end
+end)
+
+serv:Channel("sute#0608")
