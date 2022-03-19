@@ -3,6 +3,8 @@ local win = DiscordLib:Window("Atomic")
 local NavalWarfare = win:Server("Naval-Warfare", "")
 local home = NavalWarfare:Channel("Home")
 
+DiscordLib:Notification("Attention!", "Naval-Warfare Loaded!", "Okay!")
+
 home:Button("Click for more info", function()
 DiscordLib:Notification("Attention!", "Our Discord Server! | https://discord.gg/AD4JJSFYpj", "Okay!")
 end)
