@@ -1,7 +1,9 @@
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("Atomic")
-local serv = win:Server("Pet-Simulator-X", "")
+local serv = win:Server("Rebirth-Simulator-X", "")
 local btns = serv:Channel("Home")
+
+DiscordLib:Notification("Attention!", "Rebirth Simulator X Loaded!", "Okay!")
 
 btns:Button("Click for more info", function()
 DiscordLib:Notification("Attention!", "Our Discord Server! | https://discord.gg/AD4JJSFYpj", "Okay!")
