@@ -1,0 +1,243 @@
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("Atomic")
+local serv = win:Server("Bitcoin-Miner", "")
+local btns = serv:Channel("Home")
+
+btns:Button("Click for more info", function()
+DiscordLib:Notification("Attention!", "Our Discord Server! | https://discord.gg/AD4JJSFYpj", "Okay!")
+end)
+
+btns:Seperator()
+
+local tgls = serv:Channel("Automation")
+
+tgls:Button("Exchange Bitcoins!", function()
+
+    yes = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(246.23, 6.29, 89.88)
+    wait(0.5)
+    local args = {
+        [1] = true
+    }
+    game:GetService("ReplicatedStorage").Events.ExchangeMoney:FireServer(unpack(args))
+    wait(0.5)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = yes
+
+end)
+
+tgls:Toggle("Auto Claim Boost Star",false, function(FreeStar)
+	_G.Freess = FreeStar
+	while _G.Freess do
+        game:GetService("ReplicatedStorage").Events.ClaimFreeBoostStar:FireServer()
+        wait(3)
+end
+end)
+
+tgls:Seperator()
+
+tgls:Label("Change Mining Algotihms!")
+
+tgls:Button("Change Algorithm 1", function()
+local args = {
+    [1] = 1
+}
+
+game:GetService("ReplicatedStorage").Events.AlgoChang:FireServer(unpack(args))
+end)
+
+tgls:Button("Change Algorithm 2", function()
+    local args = {
+        [1] = 2
+    }
+    
+    game:GetService("ReplicatedStorage").Events.AlgoChang:FireServer(unpack(args))
+    end)
+
+    tgls:Button("Change Algorithm 3", function()
+        local args = {
+            [1] = 3
+        }
+        
+        game:GetService("ReplicatedStorage").Events.AlgoChang:FireServer(unpack(args))
+        end)
+
+tgls:Button("Change Algorithm 4", function()
+    local args = {
+        [1] = 4
+    }
+            
+    game:GetService("ReplicatedStorage").Events.AlgoChang:FireServer(unpack(args))
+end)      
+
+local telp = serv:Channel("Teleportation")
+
+telp:Button("Shop", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(217.23, 6.29, 89.88)
+end)
+
+telp:Button("Cave", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(272, 6.2, -399)
+end)
+
+telp:Button("Generators", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-208.64, 6.29, -338.83)
+end)
+
+telp:Button("Dan-T Shop Inc", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-19.95, 6.29, -700.98)
+end)
+
+telp:Button("FLUX Cards Inc", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(103.29, 6.29, -699.38)
+end)
+
+telp:Button("Tables & More", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(109.29, 6.29, -809.08)
+end)
+
+telp:Button("Miner Toolz", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-48, 6.29, -895.48)
+end)
+
+telp:Button("HSV", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-39.84, 6.29, -1092.18)
+end)
+
+telp:Button("Chypset", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-252, 6.29, -1148.28)
+end)
+
+telp:Seperator()
+
+telp:Button("Solaris Generators", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-222, 26.69, 13892.21)
+end)
+
+telp:Button("OptiX", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-236.72, 26.69, 13802.21)
+end)
+
+telp:Button("GenEX", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-75, 26.69, 13750.21)
+end)
+
+telp:Button("Solaris Electronics", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-18, 26.69, 13777.21)
+end)
+
+telp:Button("Prism Works", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(71, 26.69, 13922.21)
+end)
+
+telp:Button("XENO", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(32, 26.69, 13960.21)
+end)
+
+telp:Button("Arctic", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-147, 29.69, 13654.21)
+end)
+
+telp:Seperator()
+
+telp:Button("Winter Machine", function()
+
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-981, -23, -693)
+end)
+
+local Universals = win:Server("Universal", "http://www.roblox.com/asset/?id=6031075938")
+local universal = Universals:Channel("Visual")
+
+universal:Seperator()
+
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+ESP.Tracers = false
+ESP.Names = false
+ESP.Boxes = false
+ESP.TeamColor = false
+
+universal:Toggle("Enable Options",false, function(mamma1)
+	shared.toggles = mamma1
+    if shared.toggles == true then
+
+		ESP:Toggle(true)
+
+	elseif shared.toggles == false then
+
+		ESP:Toggle(false)
+	end
+end)
+
+universal:Toggle("Tracers",false, function(mama123)
+	shared.toggle = mama123
+    if shared.toggle == true then
+
+		ESP.Tracers = true
+
+	elseif shared.toggle == false then
+
+		ESP.Tracers = false
+	end
+end)
+	
+universal:Toggle("Names",false, function(mama12)
+	shared.toggle = mama12
+    if shared.toggle == true then
+
+		ESP.Names = true
+
+	elseif shared.toggle == false then
+
+		ESP.Names = false
+	end
+end)
+
+universal:Toggle("Boxes",false, function(mami123)
+	shared.toggle = mami123
+    if shared.toggle == true then
+
+		ESP.Boxes = true
+
+	elseif shared.toggle == false then
+
+		ESP.Boxes = false
+	end
+end)
+
+universal:Seperator()
+
+universal:Toggle("Team Colors",false, function(mami12)
+	shared.toggle = mami12
+    if shared.toggle == true then
+
+		ESP.TeamColor = true
+
+	elseif shared.toggle == false then
+
+		ESP.TeamColor = false
+	end
+end)
+
+
+local LPlayer = Universals:Channel("LocalPlayer")
+
+LPlayer:Slider("Walkspeed", 0, 1000, 16, function(value)
+
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (value)
+end)
