@@ -202,3 +202,86 @@ end
 end)
 
 serv:Channel("sute#0608")
+
+
+local Universals = win:Server("Universal", "http://www.roblox.com/asset/?id=6031075938")
+local universal = Universals:Channel("Visual")
+
+universal:Seperator()
+
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+ESP.Tracers = false
+ESP.Names = false
+ESP.Boxes = false
+ESP.TeamColor = false
+
+universal:Toggle("Enable Options",false, function(mamma1)
+	shared.toggles = mamma1
+    if shared.toggles == true then
+
+		ESP:Toggle(true)
+
+	elseif shared.toggles == false then
+
+		ESP:Toggle(false)
+	end
+end)
+
+universal:Toggle("Tracers",false, function(mama123)
+	shared.toggle = mama123
+    if shared.toggle == true then
+
+		ESP.Tracers = true
+
+	elseif shared.toggle == false then
+
+		ESP.Tracers = false
+	end
+end)
+	
+universal:Toggle("Names",false, function(mama12)
+	shared.toggle = mama12
+    if shared.toggle == true then
+
+		ESP.Names = true
+
+	elseif shared.toggle == false then
+
+		ESP.Names = false
+	end
+end)
+
+universal:Toggle("Boxes",false, function(mami123)
+	shared.toggle = mami123
+    if shared.toggle == true then
+
+		ESP.Boxes = true
+
+	elseif shared.toggle == false then
+
+		ESP.Boxes = false
+	end
+end)
+
+universal:Seperator()
+
+universal:Toggle("Team Colors",false, function(mami12)
+	shared.toggle = mami12
+    if shared.toggle == true then
+
+		ESP.TeamColor = true
+
+	elseif shared.toggle == false then
+
+		ESP.TeamColor = false
+	end
+end)
+
+
+local LPlayer = Universals:Channel("LocalPlayer")
+
+LPlayer:Slider("Walkspeed", 0, 1000, 16, function(value)
+
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = (value)
+end)
