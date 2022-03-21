@@ -13,12 +13,14 @@ btns:Seperator()
 
 local tgls = serv:Channel("Clicking")
 
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
 tgls:Toggle("Auto-Clicker",false, function(mama)
 		_G.AutoClicker = mama
 		while _G.AutoClicker do
-			game:GetService("ReplicatedStorage").Events.Click3:FireServer()
-			print("Clicked Once!")
-			wait(0.001)
+			
+        ReplicatedStorage.Events.Click3:FireServer()
+		wait(0.0002)
 end
 end)
 
@@ -30,6 +32,64 @@ local args = {
 }
 
 game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+tgls:Seperator()
+
+tgls:Toggle("2x Click Potion",false, function(Pot1)
+	_G.Potion1 = Pot1
+	DiscordLib:Notification("Attention!", "Automatically buys it for you!", "Okay!")
+	while _G.Potion1 do
+		local args = {
+			[1] = "x2Clicks"
+		}
+		
+		game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+		wait(600000)
+	end
+end)
+
+tgls:Toggle("2x Gems Potion",false, function(Pot2)
+	_G.Potion2 = Pot2
+	DiscordLib:Notification("Attention!", "Automatically buys it for you!", "Okay!")
+	while _G.Potion2 do
+local args = {
+    [1] = "x2Gems"
+}
+
+game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+
+		wait(600000)
+	end
+end)
+
+
+tgls:Toggle("2x Luck Potion",false, function(Pot3)
+	_G.Potion3 = Pot3
+	DiscordLib:Notification("Attention!", "Automatically buys it for you!", "Okay!")
+	while _G.Potion3 do
+local args = {
+    [1] = "x2Luck"
+}
+
+game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+
+		wait(600000)
+	end
+end)
+
+tgls:Toggle("2x Rebirths Potion",false, function(Pot4)
+	_G.Potion4 = Pot4
+	DiscordLib:Notification("Attention!", "Automatically buys it for you!", "Okay!")
+	while _G.Potion4 do
+local args = {
+    [1] = "x2Rebirths"
+}
+
+game:GetService("ReplicatedStorage").Events.Potion:FireServer(unpack(args))
+
+		wait(600000)
+	end
 end)
 
 local sldrs = serv:Channel("Rebirth-Automation")
@@ -186,6 +246,32 @@ drops:Button("Volcano", function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1044.55, -38.8, 595.82)
 	DiscordLib:Notification("Success!", "Teleported to volcano!", "Okay!")
 end)
+
+drops:Button("Moon", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-473, 34, -184)
+	DiscordLib:Notification("Success!", "Teleported to the moon!", "Okay!")
+end)
+
+drops:Button("Cyber", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-372, 36, -475)
+	DiscordLib:Notification("Success!", "Teleported to cyberpunk77!", "Okay!")
+end)
+
+drops:Button("Magic (Pet Machine)", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-25, 36, -477)
+	DiscordLib:Notification("Success!", "Teleported to the magic real :o!", "Okay!")
+end)
+
+drops:Button("Heaven", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-369, 34, -755)
+	DiscordLib:Notification("Success!", "Teleported to heaven", "Okay!")
+end)
+
+drops:Button("Nuclear", function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(263, 47, -502)
+	DiscordLib:Notification("Success!", "Teleported to nuclear", "Okay!")
+end)
+
 
 local eggs = serv:Channel("Auto-Eggs")
 
