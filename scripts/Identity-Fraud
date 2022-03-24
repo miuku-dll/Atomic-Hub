@@ -1,0 +1,195 @@
+--533.1697387695312, 3.399949312210083, -555.3897094726562
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/Revamp/IreXion%20UI%20Library"))()
+local Gui = Library:AddGui({
+    Title = {"Atomic", "Identity Fraud"},
+    ThemeColor = Color3.fromRGB(0, 255, 0),
+    ToggleKey = Enum.KeyCode.RightShift,
+})
+
+local Tab = Gui:AddTab("Identity Fraud")
+
+local tgls = Tab:AddCategory("Functions")
+
+tgls:AddLabel("Enable Noclip from LocalPlayer Before Teleporting!")
+
+
+tgls:AddButton("Teleport to the level 1-2 gate", function()
+    TweenService = game:GetService("TweenService")
+tweenInfo = TweenInfo.new(20) -- set 10 lower for faster speed
+TweenGoal = {}
+TweenGoal.CFrame = CFrame.new(533.1697387695312, 3.399949312210083, -555.3897094726562) -- coords u wanna tween to
+PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
+PlayTween:Play()
+end)
+
+tgls:AddButton("Teleport to the level 2-3 gate", function()
+    TweenService = game:GetService("TweenService")
+tweenInfo = TweenInfo.new(30) -- set 10 lower for faster speed
+TweenGoal = {}
+TweenGoal.CFrame = CFrame.new(1487.0924072265625, 3.399851083755493, -43.41478729248047) -- coords u wanna tween to
+PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
+PlayTween:Play()
+end)
+
+tgls:AddButton("Teleport to the final hallway", function()
+    TweenService = game:GetService("TweenService")
+tweenInfo = TweenInfo.new(30) -- set 10 lower for faster speed
+TweenGoal = {}
+TweenGoal.CFrame = CFrame.new(1785.9761962890625, 3.399676561355591, 323.4785461425781) -- coords u wanna tween to
+PlayTween = TweenService:Create(game.Players.LocalPlayer.Character.HumanoidRootPart,tweenInfo,TweenGoal)
+PlayTween:Play()
+end)
+
+
+tgls:AddLabel("Set your stage! ( Patched )")
+
+tgls:AddButton("Stage 0", function()
+
+
+local args = {
+    [1] = 0
+}
+
+game:GetService("ReplicatedStorage").Set_Stage:FireServer(unpack(args))
+wait(1)
+game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+tgls:AddButton("Stage 1", function()
+    local args = {
+        [1] = 1
+    }
+    
+    game:GetService("ReplicatedStorage").Set_Stage:FireServer(unpack(args))
+    wait(1)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+tgls:AddButton("Stage 2", function()
+    local args = {
+        [1] = 2
+    }
+    
+    game:GetService("ReplicatedStorage").Set_Stage:FireServer(unpack(args))
+    wait(1)
+    game:GetService("Players").LocalPlayer.Character.Humanoid.Health = 0
+
+end)
+
+
+--1487.0924072265625, 3.399851083755493, -43.41478729248047
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local Tab2 = Gui:AddTab("Universal")
+local universal = Tab2:AddCategory("Visual")
+
+
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+
+ESP.Tracers = false
+ESP.Names = false
+ESP.Boxes = false
+ESP.TeamColor = false
+
+universal:AddToggle("Enable Options",false, function(mamma1)
+	shared.toggles = mamma1
+    if shared.toggles == true then
+
+		ESP:Toggle(true)
+
+	elseif shared.toggles == false then
+
+		ESP:Toggle(false)
+	end
+end)
+
+universal:AddToggle("Tracers",false, function(mama123)
+	shared.toggle = mama123
+    if shared.toggle == true then
+
+		ESP.Tracers = true
+
+	elseif shared.toggle == false then
+
+		ESP.Tracers = false
+	end
+end)
+	
+universal:AddToggle("Names",false, function(mama12)
+	shared.toggle = mama12
+    if shared.toggle == true then
+
+		ESP.Names = true
+
+	elseif shared.toggle == false then
+
+		ESP.Names = false
+	end
+end)
+
+universal:AddToggle("Boxes",false, function(mami123)
+	shared.toggle = mami123
+    if shared.toggle == true then
+
+		ESP.Boxes = true
+
+	elseif shared.toggle == false then
+
+		ESP.Boxes = false
+	end
+end)
+
+
+universal:AddToggle("Team Colors",false, function(mami12)
+	shared.toggle = mami12
+    if shared.toggle == true then
+
+		ESP.TeamColor = true
+
+	elseif shared.toggle == false then
+
+		ESP.TeamColor = false
+	end
+end)
+
+
+Library:Notify("Loaded Atomic Hub!", function(bool)
+end)
+
+Library:Notify("Thank you for using Atomic Hub!", function(bool)
+	function joindiscord()
+		if not syn then return err("synapse only") end
+		local json = {
+			["cmd"] = "INVITE_BROWSER",
+				["args"] = {
+				["code"] = "DnyxZRwQh3"
+			},
+			["nonce"] = 'a'
+			}
+		task.spawn(function()
+			print(syn.request({
+				Url = 'https://discord.gg/AD4JJSFYpj',
+				Method = 'POST',
+				Headers = {
+					['Content-Type'] = 'application/json',
+					['Origin'] = 'https://discord.com'
+				  },
+				Body = game:GetService('HttpService'):JSONEncode(json),
+			}).Body)
+		end)
+	end
+end)
